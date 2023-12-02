@@ -16,7 +16,6 @@ import static gregtech.common.metatileentities.MetaTileEntities.FUSION_REACTOR;
 public class AssemblyLineLoader {
 
     public static void init() {
-
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .inputs(FUSION_CASING.getItemVariant(SUPERCONDUCTOR_COIL))
                 .input(circuit, Tier.ZPM, 4)
@@ -28,7 +27,7 @@ public class AssemblyLineLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 8))
                 .fluidInputs(NiobiumTitanium.getFluid(L * 8))
                 .outputs(FUSION_REACTOR[0].getStackForm())
-                .research(b -> b
+                .scannerResearch(b -> b
                         .researchStack(OreDictUnifier.get(wireGtSingle, IndiumTinBariumTitaniumCuprate))
                         .duration(1200)
                         .EUt(VA[IV]))
@@ -46,7 +45,7 @@ public class AssemblyLineLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 8))
                 .fluidInputs(VanadiumGallium.getFluid(L * 8))
                 .outputs(FUSION_REACTOR[1].getStackForm())
-                .research(b -> b
+                .stationResearch(b -> b
                         .researchStack(FUSION_REACTOR[0].getStackForm())
                         .CWUt(16)
                         .EUt(VA[ZPM]))
@@ -64,7 +63,7 @@ public class AssemblyLineLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 8))
                 .fluidInputs(YttriumBariumCuprate.getFluid(L * 8))
                 .outputs(FUSION_REACTOR[2].getStackForm())
-                .research(b -> b
+                .stationResearch(b -> b
                         .researchStack(FUSION_REACTOR[1].getStackForm())
                         .CWUt(96)
                         .EUt(VA[UV]))
